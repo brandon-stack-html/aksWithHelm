@@ -21,6 +21,6 @@ spec:
             - containerPort: 80
           env:
             - name: REACT_APP_SERVICE_A_URL
-              value: "http://service-a.default.svc.cluster.local/service-a"
+              value: "http://10.0.22.187/service-a"
             - name: REACT_APP_SERVICE_B_URL
-              value: "http://service-b.default.svc.cluster.local/service-b"
+              value: "http://10.0.135.150/service-b"

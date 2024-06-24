@@ -7,9 +7,6 @@ image:
 
 service:
   type: ClusterIP
-  port: 3000
-
-ingress:
-  enabled: false
+  port: 80
 
 resources: {}

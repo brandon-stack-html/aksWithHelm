@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
-const message = process.env.MESSAGE || "Hello from Service B";
+const port = process.env.PORT || 3001;
 
-app.get('/', (req, res) => {
-  res.send(message);
+app.get('/service-b', (req, res) => {
+  res.send('Hello from Service B');
 });
 
 app.listen(port, () => {
-  console.log(`Service B listening at http://localhost:${port}`);
+  console.log(`Service B running on port ${port}`);
 });
