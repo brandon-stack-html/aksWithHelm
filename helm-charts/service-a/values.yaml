@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: 7brandon/app-services-service-a
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+
+resources: {}

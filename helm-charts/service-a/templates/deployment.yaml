@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-service-a
+  labels:
+    app: {{ .Release.Name }}-service-a
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-service-a
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-service-a
+    spec:
+      containers:
+        - name: service-a
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
